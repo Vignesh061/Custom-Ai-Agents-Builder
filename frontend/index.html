@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgentForge | Builder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-view" class="auth-wrapper">
+        <div class="auth-card">
+            <h1>AgentForge<span class="dot">.</span></h1>
+            <p id="auth-subtitle">Sign in to your workspace</p>
+            
+            <form id="auth-form">
+                <input type="text" id="auth-name" placeholder="Full Name" class="hidden">
+                <input type="email" id="auth-email" placeholder="Email Address" required>
+                <input type="password" id="auth-password" placeholder="Password" required>
+                <button type="submit" id="auth-submit-btn">Sign In</button>
+            </form>
+            
+            <div class="auth-toggle">
+                <span id="auth-toggle-text">Don't have an account?</span> 
+                <a href="#" id="auth-toggle-link">Create one</a>
+            </div>
+            <div id="auth-error" class="hidden"></div>
+        </div>
+    </div>
+
+    <div id="app-layout" class="app-layout hidden">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>AgentForge<span class="dot">.</span></h2>
+                <div class="user-profile">
+                    <span id="user-greeting">Welcome</span>
+                    <button id="logout-btn">Log out</button>
+                </div>
+                
+                <div class="sidebar-tabs" style="display: flex; gap: 10px; margin-bottom: 15px;">
+                    <button id="tab-my-workspace" class="tab-btn active" style="flex:1; padding: 8px; background: #5e6ad2; color: #fff; border: none; border-radius: 6px; cursor: pointer;">My Agents</button>
+                    <button id="tab-marketplace" class="tab-btn" style="flex:1; padding: 8px; background: #222; color: #aaa; border: none; border-radius: 6px; cursor: pointer;">Marketplace</button>
+                </div>
+
+                <button id="new-agent-btn">+ New Agent</button>
+            </div>
+            <div class="sidebar-list" id="agent-list">
+                </div>
+        </aside>
+
+        <main class="main-content">
+            <div id="build-view" class="workspace-view">
+                <header class="workspace-header">
+                    <h1>Forge an Agent</h1>
+                    <p>Describe your workflow. We build the agent.</p>
+                </header>
+                <div class="command-bar">
+                    <input type="text" id="prompt-input" placeholder="e.g., I need an agent to read marketing text and extract metrics..." autocomplete="off">
+                    <button id="build-btn">Build</button>
+                </div>
+                <div id="loading-state" class="hidden">
+                    <div class="spinner"></div>
+                    <p>Forging your agent...</p>
+                </div>
+            </div>
+
+            <div id="run-view" class="workspace-view hidden">
+                <div id="active-agent-container"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
