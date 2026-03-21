@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:5000/api';
 let allAgents = []; 
 let isLoginMode = true;
-let currentTab = 'my-agents'; // State manager for our tabs
+let currentTab = 'my-agents';
 
 let currentAttachedFiles = []; // Track multiple files
 
