@@ -3,7 +3,8 @@ let allAgents = [];
 let isLoginMode = true;
 let currentTab = 'my-agents';
 
-let currentAttachedFiles = []; // Track multiple files
+let currentAttachedFiles = []; 
+
 
 // DOM Elements - Auth
 const authView = document.getElementById('auth-view');
