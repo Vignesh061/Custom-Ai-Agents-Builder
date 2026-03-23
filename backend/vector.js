@@ -70,7 +70,6 @@ export function cosineSimilarity(vecA, vecB) {
 
 /**
  * The core RAG function. Takes a user prompt, compares it mathematically to all document chunks,
- * and returns the top matches.
  */
 export async function retrieveRelevantChunks(prompt, documentChunks, topK = 3) {
     // 1. Embed the user's prompt
